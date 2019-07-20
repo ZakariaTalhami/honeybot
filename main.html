@@ -50,9 +50,12 @@
           
 
           
-            <a href="index.html" class="icon icon-home"> HoneyBot
+            <a href="index.html">
           
 
+          
+            
+            <img src="_static/honeybot_logo.png" class="logo" alt="Logo"/>
           
           </a>
 
@@ -81,7 +84,20 @@
             
             
               <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Main</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Main</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#bot-core">Bot_core</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#command-string-output">Command String Output</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#message-validation">Message Validation</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#message-util">Message util</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bot-util">Bot util</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#setup-requirements">Setup requirements</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#message-parsing">Message parsing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#bot-irc-functions">Bot IRC Functions</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#ongoing-requirement-s">Ongoing requirement/s</a></li>
+</ul>
+</li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="plugins.html">Plugins</a></li>
 </ul>
 
@@ -134,7 +150,9 @@
       <li class="wy-breadcrumbs-aside">
         
             
-            <a href="_sources/main.rst.txt" rel="nofollow"> View page source</a>
+            
+              <a href="https://github.com/pyhoneybot/honeybot/blob/master/docs/source/main.rst" class="fa fa-github"> Edit on GitHub</a>
+            
           
         
       </li>
@@ -164,7 +182,7 @@ literal blocks:</p>
 are also implicitly created anytime a new section starts.</p>
 <dl class="attribute">
 <dt id="main.connect_config">
-<code class="sig-prename descclassname">main.</code><code class="sig-name descname">connect_config</code><a class="headerlink" href="#main.connect_config" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">connect_config</code><a class="headerlink" href="#main.connect_config" title="Permalink to this definition">¶</a></dt>
 <dd><p>Module level variables may be documented in
 either the <code class="docutils literal notranslate"><span class="pre">Attributes</span></code> section of the module docstring, or in an
 inline docstring immediately following the variable.</p>
@@ -180,7 +198,7 @@ with it.</p>
 
 <dl class="attribute">
 <dt id="main.memory_reader">
-<code class="sig-prename descclassname">main.</code><code class="sig-name descname">memory_reader</code><a class="headerlink" href="#main.memory_reader" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">memory_reader</code><a class="headerlink" href="#main.memory_reader" title="Permalink to this definition">¶</a></dt>
 <dd><p>TODO.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -191,7 +209,7 @@ with it.</p>
 
 <dl class="attribute">
 <dt id="main.pluggins">
-<code class="sig-prename descclassname">main.</code><code class="sig-name descname">pluggins</code><a class="headerlink" href="#main.pluggins" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">pluggins</code><a class="headerlink" href="#main.pluggins" title="Permalink to this definition">¶</a></dt>
 <dd><p>TODO.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -202,7 +220,7 @@ with it.</p>
 
 <dl class="attribute">
 <dt id="main.logger">
-<code class="sig-prename descclassname">main.</code><code class="sig-name descname">logger</code><a class="headerlink" href="#main.logger" title="Permalink to this definition">¶</a></dt>
+<code class="sig-name descname">logger</code><a class="headerlink" href="#main.logger" title="Permalink to this definition">¶</a></dt>
 <dd><p>TODO.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Type</dt>
@@ -211,9 +229,11 @@ with it.</p>
 </dl>
 </dd></dl>
 
+<div class="section" id="bot-core">
+<h2>Bot_core<a class="headerlink" href="#bot-core" title="Permalink to this headline">¶</a></h2>
 <dl class="class">
 <dt id="main.Bot_core">
-<em class="property">class </em><code class="sig-prename descclassname">main.</code><code class="sig-name descname">Bot_core</code><span class="sig-paren">(</span><em class="sig-param">password=''</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core" title="Permalink to this definition">¶</a></dt>
+<em class="property">class </em><code class="sig-name descname">Bot_core</code><span class="sig-paren">(</span><em class="sig-param">password=''</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core" title="Permalink to this definition">¶</a></dt>
 <dd><p>Core of the bot.</p>
 <p>Detailed Description.</p>
 <dl class="field-list simple">
@@ -375,16 +395,24 @@ with it.</p>
 </dl>
 </dd></dl>
 
+</dd></dl>
+
+<div class="section" id="command-string-output">
+<h3>Command String Output<a class="headerlink" href="#command-string-output" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>The section inhabits the functions of the Bot_core class which are responsible
+for generating the command string and returning it to the function that actually
+executes the command.</p>
 <dl class="method">
-<dt id="main.Bot_core.bot_info">
-<code class="sig-name descname">bot_info</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.bot_info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get bot info.</p>
+<dt id="main.Bot_core.set_nick_command">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">set_nick_command</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.set_nick_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get string for set nickname command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>str}: TODO.</p>
+<dd class="field-odd"><p>String for the set nick command.</p>
 </dd>
 <dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict of {str</p>
+<dd class="field-even"><p>str</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
@@ -392,64 +420,24 @@ with it.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="main.Bot_core.configfile_to_list">
-<code class="sig-name descname">configfile_to_list</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.configfile_to_list" title="Permalink to this definition">¶</a></dt>
-<dd><p>Turn specified configfile to a list.</p>
+<dt id="main.Bot_core.present_command">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">present_command</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.present_command" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get string for present command.</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>filenamae</strong> (<em>str</em>) – Name of the file that should be converted.</p>
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>String for the present command.</p>
 </dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Elements of the configfile as strings.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>elements (list of str)</p>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>str</p>
 </dd>
 </dl>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.connect">
-<code class="sig-name descname">connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.connect" title="Permalink to this definition">¶</a></dt>
-<dd><p>Connect to the IRC</p>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.core_commands_parse">
-<code class="sig-name descname">core_commands_parse</code><span class="sig-paren">(</span><em class="sig-param">incoming</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.core_commands_parse" title="Permalink to this definition">¶</a></dt>
-<dd><p>parse core commands.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>incoming</strong> (<em>TODO</em>) – TODO</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.greet">
-<code class="sig-name descname">greet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.greet" title="Permalink to this definition">¶</a></dt>
-<dd><p>Greet the channel ? (TODO).</p>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.identify">
-<code class="sig-name descname">identify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.identify" title="Permalink to this definition">¶</a></dt>
-<dd><p>Identifies command.</p>
 <p class="rubric">Examples</p>
 <p>TODO</p>
 </dd></dl>
 
 <dl class="method">
 <dt id="main.Bot_core.identify_command">
-<code class="sig-name descname">identify_command</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.identify_command" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">identify_command</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.identify_command" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get string for identify command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Returns</dt>
@@ -464,21 +452,8 @@ with it.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="main.Bot_core.join">
-<code class="sig-name descname">join</code><span class="sig-paren">(</span><em class="sig-param">channel</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.join" title="Permalink to this definition">¶</a></dt>
-<dd><p>Join a specific channel.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>channel</strong> (<em>str</em>) – The channel the bot should join.</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="main.Bot_core.join_channel_command">
-<code class="sig-name descname">join_channel_command</code><span class="sig-paren">(</span><em class="sig-param">channel</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.join_channel_command" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">join_channel_command</code><span class="sig-paren">(</span><em class="sig-param">channel</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.join_channel_command" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get string for join channel command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -496,242 +471,8 @@ with it.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="main.Bot_core.load_plugins">
-<code class="sig-name descname">load_plugins</code><span class="sig-paren">(</span><em class="sig-param">plugins_to_load</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.load_plugins" title="Permalink to this definition">¶</a></dt>
-<dd><p>Load plugins that are specified in the plugins list.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>plugins_to_load</strong> (<em>list of str</em>) – List of plugins to load.</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.memory_add_value">
-<code class="sig-name descname">memory_add_value</code><span class="sig-paren">(</span><em class="sig-param">memfile</em>, <em class="sig-param">section</em>, <em class="sig-param">key</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.memory_add_value" title="Permalink to this definition">¶</a></dt>
-<dd><p>add value into memory.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>memfile</strong> (<em>TODO</em>) – TODO</p></li>
-<li><p><strong>section</strong> (<em>TODO</em>) – TODO</p></li>
-<li><p><strong>key</strong> (<em>TODO</em>) – TODO</p></li>
-<li><p><strong>value</strong> (<em>TODO</em>) – TODO</p></li>
-</ul>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.memory_fetch_value">
-<code class="sig-name descname">memory_fetch_value</code><span class="sig-paren">(</span><em class="sig-param">memfile</em>, <em class="sig-param">section</em>, <em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.memory_fetch_value" title="Permalink to this definition">¶</a></dt>
-<dd><p>fetches value from memory.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>memfile</strong> (<em>TODO</em>) – TODO</p></li>
-<li><p><strong>section</strong> (<em>TODO</em>) – TODO</p></li>
-<li><p><strong>key</strong> (<em>TODO</em>) – TODO</p></li>
-</ul>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Value of the key as a string.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>(str)</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.memory_remove_value">
-<code class="sig-name descname">memory_remove_value</code><span class="sig-paren">(</span><em class="sig-param">memfile</em>, <em class="sig-param">section</em>, <em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.memory_remove_value" title="Permalink to this definition">¶</a></dt>
-<dd><p>remove value from memory.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>memfile</strong> (<em>TODO</em>) – TODO</p></li>
-<li><p><strong>section</strong> (<em>TODO</em>) – TODO</p></li>
-<li><p><strong>key</strong> (<em>TODO</em>) – TODO</p></li>
-</ul>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.message_info">
-<code class="sig-name descname">message_info</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.message_info" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get info of a message.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>s</strong> (<em>str</em>) – TODO</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>str}: TODO</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>dict of {str</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.methods">
-<code class="sig-name descname">methods</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.methods" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return methods of the bot.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>str}: Dictionary of command names and strings.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>dict of {str</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.pong_return">
-<code class="sig-name descname">pong_return</code><span class="sig-paren">(</span><em class="sig-param">domain</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.pong_return" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get string for Pong command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>domain</strong> (<em>str</em>) – String of the current domain.</p>
-</dd>
-<dt class="field-even">Returns</dt>
-<dd class="field-even"><p>Command for Pong.</p>
-</dd>
-<dt class="field-odd">Return type</dt>
-<dd class="field-odd"><p>str</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.present_command">
-<code class="sig-name descname">present_command</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.present_command" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get string for present command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>String for the present command.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>str</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.pull">
-<code class="sig-name descname">pull</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.pull" title="Permalink to this definition">¶</a></dt>
-<dd><p>TODO</p>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.registered_run">
-<code class="sig-name descname">registered_run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.registered_run" title="Permalink to this definition">¶</a></dt>
-<dd><p>TODO</p>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.requirements">
-<code class="sig-name descname">requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.requirements" title="Permalink to this definition">¶</a></dt>
-<dd><p>Return requirements of the bot.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>List of the requirements.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>reqs (list of str)</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.run_plugins">
-<code class="sig-name descname">run_plugins</code><span class="sig-paren">(</span><em class="sig-param">listfrom</em>, <em class="sig-param">incoming</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.run_plugins" title="Permalink to this definition">¶</a></dt>
-<dd><p>Runs the plugins.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>listfrom</strong> (<em>TODO</em>) – TODO</p></li>
-<li><p><strong>incoming</strong> (<em>TODO</em>) – TODO</p></li>
-</ul>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.send">
-<code class="sig-name descname">send</code><span class="sig-paren">(</span><em class="sig-param">msg</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.send" title="Permalink to this definition">¶</a></dt>
-<dd><p>Send a message.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>msg</strong> (<em>str</em>) – The message that’s to be sent.</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.send_target">
-<code class="sig-name descname">send_target</code><span class="sig-paren">(</span><em class="sig-param">target</em>, <em class="sig-param">msg</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.send_target" title="Permalink to this definition">¶</a></dt>
-<dd><p>Send a specific message to target.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><ul class="simple">
-<li><p><strong>target</strong> (<em>str</em>) – The target that’s to be messaged.</p></li>
-<li><p><strong>msg</strong> (<em>str</em>) – The message that’s to be sent.</p></li>
-</ul>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
-<dt id="main.Bot_core.set_nick_command">
-<code class="sig-name descname">set_nick_command</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.set_nick_command" title="Permalink to this definition">¶</a></dt>
-<dd><p>Get string for set nickname command.</p>
-<dl class="field-list simple">
-<dt class="field-odd">Returns</dt>
-<dd class="field-odd"><p>String for the set nick command.</p>
-</dd>
-<dt class="field-even">Return type</dt>
-<dd class="field-even"><p>str</p>
-</dd>
-</dl>
-<p class="rubric">Examples</p>
-<p>TODO</p>
-</dd></dl>
-
-<dl class="method">
 <dt id="main.Bot_core.specific_send_command">
-<code class="sig-name descname">specific_send_command</code><span class="sig-paren">(</span><em class="sig-param">target</em>, <em class="sig-param">msg</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.specific_send_command" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">specific_send_command</code><span class="sig-paren">(</span><em class="sig-param">target</em>, <em class="sig-param">msg</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.specific_send_command" title="Permalink to this definition">¶</a></dt>
 <dd><p>Get string for specific send command.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -752,8 +493,329 @@ with it.</p>
 </dd></dl>
 
 <dl class="method">
+<dt id="main.Bot_core.pong_return">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">pong_return</code><span class="sig-paren">(</span><em class="sig-param">domain</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.pong_return" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get string for Pong command.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>domain</strong> (<em>str</em>) – String of the current domain.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Command for Pong.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="message-validation">
+<h3>Message Validation<a class="headerlink" href="#message-validation" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Description of message validation section</p>
+<dl class="method">
+<dt id="main.Bot_core.message_info">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">message_info</code><span class="sig-paren">(</span><em class="sig-param">s</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.message_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get info of a message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>s</strong> (<em>str</em>) – TODO</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>str}: TODO</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>dict of {str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+<dl class="function">
+<dt id="main.Bot_core.bot_info">
+<code class="sig-name descname">bot_info</code><span class="sig-paren">(</span><em class="sig-param">self</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.bot_info" title="Permalink to this definition">¶</a></dt>
+<dd><p>Get bot info.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>str}: TODO.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict of {str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="message-util">
+<h3>Message util<a class="headerlink" href="#message-util" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Message util Description</p>
+<dl class="method">
+<dt id="main.Bot_core.send">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">send</code><span class="sig-paren">(</span><em class="sig-param">msg</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.send" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a message.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>msg</strong> (<em>str</em>) – The message that’s to be sent.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main.Bot_core.send_target">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">send_target</code><span class="sig-paren">(</span><em class="sig-param">target</em>, <em class="sig-param">msg</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.send_target" title="Permalink to this definition">¶</a></dt>
+<dd><p>Send a specific message to target.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>target</strong> (<em>str</em>) – The target that’s to be messaged.</p></li>
+<li><p><strong>msg</strong> (<em>str</em>) – The message that’s to be sent.</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main.Bot_core.join">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">join</code><span class="sig-paren">(</span><em class="sig-param">channel</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.join" title="Permalink to this definition">¶</a></dt>
+<dd><p>Join a specific channel.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>channel</strong> (<em>str</em>) – The channel the bot should join.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="bot-util">
+<h3>Bot util<a class="headerlink" href="#bot-util" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Bot util Description</p>
+<dl class="method">
+<dt id="main.Bot_core.load_plugins">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">load_plugins</code><span class="sig-paren">(</span><em class="sig-param">plugins_to_load</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.load_plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Load plugins that are specified in the plugins list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>plugins_to_load</strong> (<em>list of str</em>) – List of plugins to load.</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main.Bot_core.configfile_to_list">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">configfile_to_list</code><span class="sig-paren">(</span><em class="sig-param">filename</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.configfile_to_list" title="Permalink to this definition">¶</a></dt>
+<dd><p>Turn specified configfile to a list.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>filenamae</strong> (<em>str</em>) – Name of the file that should be converted.</p>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Elements of the configfile as strings.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>elements (list of str)</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main.Bot_core.methods">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">methods</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.methods" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return methods of the bot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>str}: Dictionary of command names and strings.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>dict of {str</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main.Bot_core.run_plugins">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">run_plugins</code><span class="sig-paren">(</span><em class="sig-param">listfrom</em>, <em class="sig-param">incoming</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.run_plugins" title="Permalink to this definition">¶</a></dt>
+<dd><p>Runs the plugins.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>listfrom</strong> (<em>TODO</em>) – TODO</p></li>
+<li><p><strong>incoming</strong> (<em>TODO</em>) – TODO</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="setup-requirements">
+<h3>Setup requirements<a class="headerlink" href="#setup-requirements" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Setup requirements Description</p>
+<dl class="method">
+<dt id="main.Bot_core.requirements">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">requirements</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.requirements" title="Permalink to this definition">¶</a></dt>
+<dd><p>Return requirements of the bot.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Returns</dt>
+<dd class="field-odd"><p>List of the requirements.</p>
+</dd>
+<dt class="field-even">Return type</dt>
+<dd class="field-even"><p>reqs (list of str)</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main.Bot_core.memory_add_value">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">memory_add_value</code><span class="sig-paren">(</span><em class="sig-param">memfile</em>, <em class="sig-param">section</em>, <em class="sig-param">key</em>, <em class="sig-param">value</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.memory_add_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>add value into memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>memfile</strong> (<em>TODO</em>) – TODO</p></li>
+<li><p><strong>section</strong> (<em>TODO</em>) – TODO</p></li>
+<li><p><strong>key</strong> (<em>TODO</em>) – TODO</p></li>
+<li><p><strong>value</strong> (<em>TODO</em>) – TODO</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main.Bot_core.memory_remove_value">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">memory_remove_value</code><span class="sig-paren">(</span><em class="sig-param">memfile</em>, <em class="sig-param">section</em>, <em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.memory_remove_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>remove value from memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>memfile</strong> (<em>TODO</em>) – TODO</p></li>
+<li><p><strong>section</strong> (<em>TODO</em>) – TODO</p></li>
+<li><p><strong>key</strong> (<em>TODO</em>) – TODO</p></li>
+</ul>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main.Bot_core.memory_fetch_value">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">memory_fetch_value</code><span class="sig-paren">(</span><em class="sig-param">memfile</em>, <em class="sig-param">section</em>, <em class="sig-param">key</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.memory_fetch_value" title="Permalink to this definition">¶</a></dt>
+<dd><p>fetches value from memory.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><ul class="simple">
+<li><p><strong>memfile</strong> (<em>TODO</em>) – TODO</p></li>
+<li><p><strong>section</strong> (<em>TODO</em>) – TODO</p></li>
+<li><p><strong>key</strong> (<em>TODO</em>) – TODO</p></li>
+</ul>
+</dd>
+<dt class="field-even">Returns</dt>
+<dd class="field-even"><p>Value of the key as a string.</p>
+</dd>
+<dt class="field-odd">Return type</dt>
+<dd class="field-odd"><p>(str)</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="message-parsing">
+<h3>Message parsing<a class="headerlink" href="#message-parsing" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Message parsing Description</p>
+<dl class="method">
+<dt id="main.Bot_core.core_commands_parse">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">core_commands_parse</code><span class="sig-paren">(</span><em class="sig-param">incoming</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.core_commands_parse" title="Permalink to this definition">¶</a></dt>
+<dd><p>parse core commands.</p>
+<dl class="field-list simple">
+<dt class="field-odd">Parameters</dt>
+<dd class="field-odd"><p><strong>incoming</strong> (<em>TODO</em>) – TODO</p>
+</dd>
+</dl>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="bot-irc-functions">
+<h3>Bot IRC Functions<a class="headerlink" href="#bot-irc-functions" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Bot IRC Functions Description</p>
+<dl class="method">
+<dt id="main.Bot_core.connect">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">connect</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.connect" title="Permalink to this definition">¶</a></dt>
+<dd><p>Connect to the IRC</p>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main.Bot_core.identify">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">identify</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.identify" title="Permalink to this definition">¶</a></dt>
+<dd><p>Identifies command.</p>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main.Bot_core.greet">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">greet</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.greet" title="Permalink to this definition">¶</a></dt>
+<dd><p>Greet the channel ? (TODO).</p>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+<dl class="method">
+<dt id="main.Bot_core.pull">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">pull</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.pull" title="Permalink to this definition">¶</a></dt>
+<dd><p>TODO</p>
+<p class="rubric">Examples</p>
+<p>TODO</p>
+</dd></dl>
+
+</div></blockquote>
+</div>
+<div class="section" id="ongoing-requirement-s">
+<h3>Ongoing requirement/s<a class="headerlink" href="#ongoing-requirement-s" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><p>Ongoing requirement/s Description</p>
+<dl class="method">
 <dt id="main.Bot_core.stay_alive">
-<code class="sig-name descname">stay_alive</code><span class="sig-paren">(</span><em class="sig-param">incoming</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.stay_alive" title="Permalink to this definition">¶</a></dt>
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">stay_alive</code><span class="sig-paren">(</span><em class="sig-param">incoming</em><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.stay_alive" title="Permalink to this definition">¶</a></dt>
 <dd><p>TODO</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
@@ -765,21 +827,24 @@ with it.</p>
 </dd></dl>
 
 <dl class="method">
-<dt id="main.Bot_core.unregistered_run">
-<code class="sig-name descname">unregistered_run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.unregistered_run" title="Permalink to this definition">¶</a></dt>
+<dt id="main.Bot_core.registered_run">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">registered_run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.registered_run" title="Permalink to this definition">¶</a></dt>
 <dd><p>TODO</p>
 <p class="rubric">Examples</p>
 <p>TODO</p>
 </dd></dl>
 
+<dl class="method">
+<dt id="main.Bot_core.unregistered_run">
+<code class="sig-prename descclassname">Bot_core.</code><code class="sig-name descname">unregistered_run</code><span class="sig-paren">(</span><span class="sig-paren">)</span><a class="headerlink" href="#main.Bot_core.unregistered_run" title="Permalink to this definition">¶</a></dt>
+<dd><p>TODO</p>
+<p class="rubric">Examples</p>
+<p>TODO</p>
 </dd></dl>
 
-<dl class="data">
-<dt>
-<code class="sig-prename descclassname">main.</code><code class="sig-name descname">logger</code><em class="property"> = &lt;Logger bot_core (WARNING)&gt;</em></dt>
-<dd><p>BOT CONNECTION SETUP</p>
-</dd></dl>
-
+</div></blockquote>
+</div>
+</div>
 </div>
 
 
