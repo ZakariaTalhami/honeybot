@@ -417,7 +417,10 @@ executes the command.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>TODO</p>
+<dl class="simple">
+<dt>bot_core = Bot_core()</dt><dd><p>bot_core.set_nick_command()</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -433,7 +436,10 @@ executes the command.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>TODO</p>
+<dl class="simple">
+<dt>bot_core = Bot_core()</dt><dd><p>bot_core.present_command()</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -449,7 +455,10 @@ executes the command.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>TODO</p>
+<dl class="simple">
+<dt>bot_core = Bot_core()</dt><dd><p>bot_core.identify_command()</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -468,7 +477,13 @@ executes the command.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>TODO</p>
+<p>channel_name_command = ‘&lt;command_name&gt;’</p>
+<blockquote>
+<div><dl class="simple">
+<dt>bot_core = Bot_core()</dt><dd><p>bot_core.join_channel_command(channel_name_command)</p>
+</dd>
+</dl>
+</div></blockquote>
 </dd></dl>
 
 <dl class="method">
@@ -490,7 +505,12 @@ executes the command.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>TODO</p>
+<dl class="simple">
+<dt>target_name = ‘&lt;target_name&gt;’</dt><dd><p>str msg = ‘I am a test message’</p>
+</dd>
+<dt>bot_core = Bot_core()</dt><dd><p>bot_core.specific_send_command(target_name, msg)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="method">
@@ -509,7 +529,11 @@ executes the command.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>TODO</p>
+<dl class="simple">
+<dt>domain_name = ‘&lt;current user domain&gt;’</dt><dd><p>bot_core = Bot_core()
+bot_core.pong_return(domain_name)</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div></blockquote>
@@ -524,17 +548,33 @@ executes the command.</p>
 <dd><p>Get info of a message.</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters</dt>
-<dd class="field-odd"><p><strong>s</strong> (<em>str</em>) – TODO</p>
+<dd class="field-odd"><p><strong>s</strong> (<em>str</em>) – Incoming message information</p>
 </dd>
 <dt class="field-even">Returns</dt>
-<dd class="field-even"><p>str}: TODO</p>
+<dd class="field-even"><p><dl>
+<dt>str}: interprets the incoming message and splits the message to get the following information out of the message viz ‘prefix’, ‘command’, ‘args’, ‘address’, ‘user’. Then returns the information as a dictionary containing following information:</dt><dd><dl class="simple">
+<dt>{</dt><dd><p>‘prefix’: &lt;prefix_string_value&gt;
+‘command’: &lt;command_string_value&gt;
+‘args’: &lt;array_of_argument_strings&gt;
+‘address’: &lt;target address to which the message was sent&gt;
+‘user’:&lt;user name who sent the message&gt;</p>
+</dd>
+</dl>
+<p>}</p>
+</dd>
+</dl>
+</p>
 </dd>
 <dt class="field-odd">Return type</dt>
 <dd class="field-odd"><p>dict of {str</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>TODO</p>
+<dl class="simple">
+<dt>message = ‘&lt;incoming message&gt;’</dt><dd><p>bot_core = Bot_core()
+bot_core.message_info(message)</p>
+</dd>
+</dl>
 </dd></dl>
 
 <dl class="function">
@@ -550,7 +590,10 @@ executes the command.</p>
 </dd>
 </dl>
 <p class="rubric">Examples</p>
-<p>TODO</p>
+<dl class="simple">
+<dt>bot_core = Bot_core()</dt><dd><p>bot_core.bot_info(message)</p>
+</dd>
+</dl>
 </dd></dl>
 
 </div></blockquote>
